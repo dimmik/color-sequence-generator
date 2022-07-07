@@ -13,8 +13,8 @@
     <Title>Color Sequence Generator</Title>
     
     <PackageDescription>
-        Generates semi-infinite (up to int.MaxValue, default to 1000000 values) or tolerable color, in constant memory and complexity O(1) for next color. 
-        Main purpose - auto-generation colors for pie charts and diagrams alike
+        Generates semi-infinite (up to int.MaxValue, default to 1000000 values) or tolerable colors, in constant memory and complexity O(1) for next color. 
+        Main purpose - auto-generation of colors for pie charts and diagrams alike
         https://github.com/dimmik/color-sequence-generator
     </PackageDescription>
     <PackageTags>Color;Colors;Sequence;Color Sequence;Generation;Auto Generation</PackageTags>
