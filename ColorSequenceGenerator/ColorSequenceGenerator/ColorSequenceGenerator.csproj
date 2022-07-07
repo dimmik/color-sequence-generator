@@ -19,6 +19,8 @@
         var csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
         var persons = new [] {"John Doe", "Peter Smith", "Jack Daniels"};
         var personsAndColors = persons.Zip(csg.ColorSequence()); // => (John Doe, #3566EE),(Peter Smith, #570B9D),(Jack Daniels, #8DE24A)
+        
+        Source code: https://github.com/dimmik/color-sequence-generator
     </description>
   </PropertyGroup>
 

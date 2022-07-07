@@ -5,7 +5,9 @@
         static void Main(string[] args)
         {
             var csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
-            using var fs = File.OpenWrite(@"d:\tmp\color-sequence.html");
+            string fn = @"/tmp/color-sequence.html";
+            Console.WriteLine($"Write to {Path.GetFullPath(fn)}");
+            using var fs = File.OpenWrite(fn);
             using var sw = new StreamWriter(fs);
             sw.WriteLine("<html><body>");
             var colors = csg.ColorSequence();
