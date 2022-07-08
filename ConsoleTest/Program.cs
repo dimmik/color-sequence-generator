@@ -1,10 +1,12 @@
-﻿namespace ConsoleTest
+﻿using ColorSequenceGenerator;
+
+namespace ConsoleTest
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            var csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
+            IColorSequenceGenerator csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
             string fn = @"/tmp/color-sequence.html";
             Console.WriteLine($"Write to {Path.GetFullPath(fn)}");
             using var fs = File.OpenWrite(fn);
@@ -21,6 +23,10 @@
             Console.WriteLine($"{string.Join(",", personsAndColors.Select(pc => $"({pc.First}, {pc.Second})"))}");
 
             sw.WriteLine("</body></html>");
+
+            RGB r = "rgb(23, 54, 134)";
+            string s = r;
+
         }
     }
 }

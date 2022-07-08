@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ColorSequenceGenerator
 {
-    public class ColorSequenceGenerator
+    public class ColorSequenceGenerator : IColorSequenceGenerator
     {
         public RGB Seed { get; set; } = new RGB(0x35, 0x66, 0xee);
         public double Magic { get; set; } = 1.63;
@@ -48,36 +48,6 @@ namespace ColorSequenceGenerator
             colorN = (int)(colorN * magic);
             var bytes = BitConverter.GetBytes(colorN);
             return new RGB() { Red = bytes[2], Green = bytes[1], Blue = bytes[0] };
-        }
-    }
-    public class RGB
-    {
-        public byte Red { get; set; }
-        public byte Green { get; set; }
-        public byte Blue { get; set; }
-
-        public RGB()
-        {
-        }
-        public RGB(byte red, byte green, byte blue)
-        {
-            Red = red;
-            Green = green;
-            Blue = blue;
-        }
-        private readonly SortedDictionary<string, Func<RGB, string>> formats = new SortedDictionary<string, Func<RGB, string>>()
-        {
-            { "rgb", (r) => $"rgb({r.Red}, {r.Green}, {r.Blue})" },
-            { "#", (r) => $"#{r.Red:X2}{r.Green:X2}{r.Blue:X2}" },
-        };
-        public string ToString(string fmt)
-        {
-            if (!formats.ContainsKey(fmt)) throw new ArgumentException($"Format should be one of ('{string.Join("', '", formats.Keys)}')");
-            return formats[fmt](this);
-        }
-        public override string ToString()
-        {
-            return ToString("#");
         }
     }
 }
