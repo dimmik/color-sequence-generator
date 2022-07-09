@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <PackageId>ColorSequenceGenerator</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <Authors>Dmitry Andrievsky</Authors>
     <Company>In Person</Company>
     <Title>Color Sequence Generator</Title>

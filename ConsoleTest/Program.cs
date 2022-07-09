@@ -6,7 +6,7 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-            IColorSequenceGenerator csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
+            IColorSequenceGenerator csg = CSG.Instance;
             string fn = @"/tmp/color-sequence.html";
             Console.WriteLine($"Write to {Path.GetFullPath(fn)}");
             using var fs = File.OpenWrite(fn);

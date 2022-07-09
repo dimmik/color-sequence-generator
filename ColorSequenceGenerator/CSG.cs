@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace ColorSequenceGenerator
 {
-    public class ColorSequenceGenerator : IColorSequenceGenerator
+    public class CSG : IColorSequenceGenerator
     {
         public RGB Seed { get; set; } = new RGB(0x35, 0x66, 0xee);
         public double Magic { get; set; } = 1.63;
         public int MaxSeqLength { get; set; } = 1000000;
 
-        public ColorSequenceGenerator()
+        public CSG()
         {
         }
-        public ColorSequenceGenerator(RGB seed, double magic)
+        public CSG(RGB seed, double magic)
         {
             Seed = seed ?? throw new ArgumentNullException(nameof(seed));
             Magic = magic;
         }
-        public static readonly ColorSequenceGenerator Instance = new ColorSequenceGenerator(new RGB(0x35, 0x66, 0xee), 1.63);
+        public static readonly CSG Instance = new CSG(new RGB(0x35, 0x66, 0xee), 1.63);
 
         public IEnumerable<RGB> ColorSequence()
         {

@@ -5,7 +5,7 @@ Main purpose - auto-generation of colors for pie charts and diagrams alike
         
 Usage: 
 ```        
-        var csg = ColorSequenceGenerator.ColorSequenceGenerator.Instance;
+        var csg = ColorSequenceGenerator.CSG.Instance;
         var persons = new [] {"John Doe", "Peter Smith", "Jack Daniels"};
         var personsAndColors = persons.Zip(csg.ColorSequence()); // => (John Doe, #3566EE),(Peter Smith, #570B9D),(Jack Daniels, #8DE24A)
 ```
