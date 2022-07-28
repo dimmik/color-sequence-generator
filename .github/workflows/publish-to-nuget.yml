@@ -16,7 +16,7 @@ jobs:
       #    dotnet-version: 6.x.x
 
       # Publish
-      - name: Publish & Pack
+      - name: Publish & Pack Colorgen
         run: dotnet publish -c Release -o . ColorSequenceGenerator/ColorSequenceGenerator.csproj
         
       - name: Push To Nuget
