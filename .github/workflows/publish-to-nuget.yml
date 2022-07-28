@@ -1,0 +1,23 @@
+name: publish to nuget
+on:
+  push:
+    branches:
+      - master # Default release branch, may also be named 'master' or 'develop'
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      #- name: Setup dotnet
+      #  uses: actions/setup-dotnet@v1
+      #  with:
+      #    dotnet-version: 6.x.x
+
+      # Publish
+      - name: Publish & Pack
+        run: dotnet publish -c Release -o . ColorSequenceGenerator/ColorSequenceGenerator.csproj
+        
+      - name: Push To Nuget
+        run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
